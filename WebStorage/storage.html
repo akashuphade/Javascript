@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        if (localStorage.hits) {
+            localStorage.hits = Number(localStorage.hits) + 1
+        } else {
+            localStorage.hits = 1
+        }
+
+        if (Number(localStorage.hits) > 20) {
+            localStorage.clear()
+            localStorage.hits = 1
+        }
+
+        document.write("No of hits are " + localStorage.hits)
+    </script>
+
+    <p>Refreshing page will increase the hits</p>
+    <p>Closing and opening same site again won't retain the hits as it is session scoped</p>
+</body>
+</html>
