@@ -16,6 +16,7 @@ const liMaker = (text, index) => {
     span.textContent = "Remove"
     span.style.cursor = "pointer"
 
+    //bind the remove badge click button
     span.onclick = function () {
         parent = this.parentElement;
         parent.parentElement.removeChild(parent)
@@ -33,6 +34,7 @@ const liMaker = (text, index) => {
 
 }
 
+// Get the items from local storage and show in the dom
 let items = localStorage.getItem("items")
 
 let itemsArray = []
@@ -42,6 +44,7 @@ if (items) {
         liMaker(element, index)
     });
 }
+
 // On submit add li from input value
 form.addEventListener('submit', function (e) {
     e.preventDefault()
