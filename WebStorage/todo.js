@@ -14,6 +14,7 @@ const liMaker = (text, index) => {
     const span = document.createElement('span')
     span.className += "badge badge-danger float-right"
     span.textContent = "Remove"
+    span.style.cursor = "pointer"
 
     span.onclick = function () {
         parent = this.parentElement;
